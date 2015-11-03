@@ -25,8 +25,6 @@ const NewClient = React.createClass({
 
     });
 
-    // theClient = new Client({first_name, last_name, dob, phone, gender, marital, education, employement});
-
   },
 
   render() {

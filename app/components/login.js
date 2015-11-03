@@ -20,8 +20,8 @@ const Login = React.createClass({
   handleSubmit(event) {
     event.preventDefault()
 
-    let username = this.refs.email.value
-    let password = this.refs.password.value
+    let username = this.refs.email.value;
+    let password = this.refs.password.value;
 
     store.authenticateSession({username, password}).then((loggedIn) =>{
       if (!loggedIn)
@@ -49,7 +49,8 @@ const Login = React.createClass({
         <input className="login-input" ref="email" placeholder="email" />
         <input type="password" ref="password" placeholder="password" />
         <button type="submit">Login</button>
-        <Link to="/signup"> Sign Up</Link>
+        <Link to="/signup">Sign Up </Link>
+        <Link to="/dog-signup"> Human or Dog</Link>
         {this.state.error && (
           <p>Bad login information</p>
         )}

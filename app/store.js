@@ -86,7 +86,7 @@ const Store = _.extend({}, Backbone.Events, {
   createUser(attributes) {
     let user = new User(attributes);
     return user.save().then(()=> {
-      return sessioin.authenticate({sessionToken:
+      return session.authenticate({sessionToken:
 user.get('sessionToken')});
     });
   },

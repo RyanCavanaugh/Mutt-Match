@@ -3,7 +3,7 @@ import { History } from 'react-router';
 import store from '../store';
 
 
-const Signup = React.createClass({
+const DogSignup = React.createClass({
   propTypes: {
     location: React.PropTypes.object
   },
@@ -22,7 +22,7 @@ const Signup = React.createClass({
     let email = this.refs.email.value;
     let username = email;
     let password = this.refs.password.value;
-    let userage = this.refs.userage.value;
+    let dogage = this.refs.dogage.value;
     let dogsize = this.refs.dogsize.value;
     let otherpets = this.refs.otherpets.value;
     let children = this.refs.children.value;
@@ -30,7 +30,7 @@ const Signup = React.createClass({
     let exercise = this.refs.exercise.value;
     let training = this.refs.training.value;
 
-  store.createUser({username, email, password, userage, dogsize, otherpets, children, hypoallergenic, exercise, training}).then(()=> {
+  store.createUser({username, email, password, dogage, dogsize, otherpets, children, hypoallergenic, exercise, training}).then(()=> {
     let { location } = this.props;
     if (location.state && location.state.nextPathname) {
       this.history.replaceState(null, location.state.nextPathname);
@@ -49,21 +49,21 @@ const Signup = React.createClass({
       <div className="small-10 columns">
       <form onSubmit={this.handleSubmit}>
         <fieldset>
-        <legend>Human Sign Up</legend>
+        <legend>Dog Sign Up</legend>
         <input type="text" ref="username" placeholder="Username" />
         <input type="text" ref="email" placeholder="Email" />
         <input type="text" ref="password" placeholder="Password" />
 
-                      Your Age:
-                      <select ref="userage" defaultValue="19-29">
-                        <option value="18 or less">18 or less</option>
-                        <option value="19-29">19-29</option>
-                        <option value="30-44">30-44</option>
-                        <option value="45-69">45-69</option>
-                        <option value="70 and up">70 and up</option>
+                      Your dogs age:
+                      <select ref="dogage" defaultValue="adult">
+                        <option value="puppy">less than 1 year old</option>
+                        <option value="young">1-2 years old</option>
+                        <option value="adult">2-6 years old</option>
+                        <option value="mature">6-9 years old</option>
+                        <option value="elderly">10+ years old</option>
                       </select>
 
-                      Dog Size Preffered:
+                      Your dogs size:
                       <select ref="dogsize" defaultValue="medium">
                         <option value="itty-bitty">Itty Bitty (Less than 10 lbs)</option>
                         <option value="small">Small (11-22 lbs)</option>
@@ -72,19 +72,18 @@ const Signup = React.createClass({
                         <option value="super-sized">Super Sized (80 lbs and up)</option>
                       </select>
 
-                        Are there other pets in the household?
+                        Does you dog do well with other pets?
                         <select ref="otherpets" defaultValue="none">
-                          <option value="cat">A Cat</option>
-                          <option value="dog">A Dog</option>
-                          <option value="cat-dog">A Cat and Dog</option>
+                          <option value="cat">Cats</option>
+                          <option value="dog">Dogs</option>
+                          <option value="cat-dog">Dogs and Cats</option>
                           <option value="none">None</option>
                         </select>
 
-                        Are there (or will there be) children in the household?
+                        Does you dog do well with children under 7 years old?
                         <select ref="children" defaultValue="no">
                           <option value="yes">Yes</option>
                           <option value="no">No</option>
-                          <option value="sometimes">Sometimes</option>
                         </select>
 
                         Do you (or someone in the household) need a hypoallergenic dog?
@@ -93,16 +92,16 @@ const Signup = React.createClass({
                           <option value="no">No</option>
                         </select>
 
-                        How much exercise can/will you give your dog daily?
-                        <select ref="exercise" defaultValue="20-30">
+                        How much exercise do you give your dog with currently?
+                        <select ref="exercise" defaultValue="no">
                           <option value="none">Little to none</option>
                           <option value="10-20">10-20 minutes a day</option>
                           <option value="20-30">20-30 minutes a day</option>
                           <option value="45+">45+ minutes a day</option>
                         </select>
 
-                        How much training can/will you give your dog daily?
-                        <select ref="training" defaultValue="10-20">
+                        How much training do you give your dog daily?
+                        <select ref="training" defaultValue="no">
                           <option value="none">Little to none</option>
                           <option value="10-20">10-20 minutes a day</option>
                           <option value="30+">30+ minutes a day</option>
@@ -118,6 +117,6 @@ const Signup = React.createClass({
     </div>
     )
   }
-})
+});
 
-export default Signup;
+export default DogSignup;

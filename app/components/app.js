@@ -4,9 +4,6 @@ import BackboneMixin from '../mixins/backbone';
 import store from '../store';
 import { History } from 'react-router';
 
-
-
-
 var App = React.createClass({
   propTypes: {
     children: React.PropTypes.node
