@@ -44,13 +44,29 @@ const Login = React.createClass({
     <div className="row">
      <div className="small-10 columns">
       <form onSubmit={this.handleSubmit}>
+
         <fieldset>
         <legend>Login</legend>
         <input className="login-input" ref="email" placeholder="email" />
         <input type="password" ref="password" placeholder="password" />
         <button type="submit">Login</button>
-        <Link to="/signup">Sign Up </Link>
-        <Link to="/dog-signup"> Human or Dog</Link>
+        </fieldset>
+
+
+        <fieldset>
+        <legend>Create an account</legend>
+
+        <fieldset>
+        <legend>Looking for a Dog</legend>
+        <Link to="/signup"><button>Sign Up</button></Link>
+        </fieldset>
+
+        <fieldset>
+        <legend>Looking for a home for your dog</legend>
+        <Link to="/dog-signup"><button>Sign Up</button></Link>
+        </fieldset>
+
+
         {this.state.error && (
           <p>Bad login information</p>
         )}

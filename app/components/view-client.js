@@ -5,7 +5,6 @@ import store from '../store';
 import { Link } from 'react-router';
 import { History } from 'react-router';
 import BackboneMixin from '../mixins/backbone';
-import NewClient from './create';
 
 
 //this component is for the toggle class functionality of the assistnace list
@@ -90,7 +89,7 @@ const ViewClient = React.createClass({
       this.refs.assistance.value = '';
   },
 
-//I am bringing in the Secion component here as a wrapper for the assistance list and inculded css styling 
+//I am bringing in the Secion component here as a wrapper for the assistance list and inculded css styling
   render() {
 
     let client = this.state.client;

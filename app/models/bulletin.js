@@ -19,7 +19,7 @@ const Bulletin = Backbone.Model.extend({
 
   toJSON(options) {
   if(options) {
-  
+
     return _.extend({}, this.attributes, {
       creator: {
         "__type": "Pointer",
