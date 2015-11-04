@@ -32,7 +32,7 @@ var App = React.createClass({
         <nav className="top-bar" data-topbar role="navigation">
           <ul className="title-area">
             <li className="name">
-              <h1><IndexLink to="/">Home</IndexLink></h1>
+              <h1><IndexLink to="/">MuttMatch.com</IndexLink></h1>
             </li>
           </ul>
 
@@ -40,14 +40,14 @@ var App = React.createClass({
             {/* Left Nav Section */}
             <ul className="left">
               <li className="name">
-                <Link to="/clients">View Clients</Link>
+                <Link to="/clients">Profile</Link>
               </li>
 
               <li className="has-dropdown">
-                <a href="#">Add Options</a>
+                <a href="#">View Available Dogs</a>
                   <ul className="dropdown">
-                    <li><Link to="/bulletin">Create New Bulletin</Link></li>
-                    <li><Link to="/create">Create New Client</Link></li>
+                    <li><Link to="/bulletin">Near me</Link></li>
+                    <li><Link to="/create">New Search</Link></li>
                   </ul>
               </li>
             </ul>

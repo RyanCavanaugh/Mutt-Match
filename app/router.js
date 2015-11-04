@@ -8,9 +8,7 @@ import Index from './components/index';
 import Login from './components/login';
 import Signup from './components/signup';
 import DogSignup from './components/dog-signup';
-import ViewClientList from './components/view-client-list';
-import ViewClient from './components/view-client';
-import NewBulletin from './components/bulletin-form';
+import ProfilePic from './comporacomponents/profile-pic';
 
 
 function requireAuth(nextState, replaceState) {
@@ -32,13 +30,8 @@ ReactDOM.render((
       <Route path="login" component={Login} onEnter={requireNotAuth} />
       <Route path="dog-signup" component={DogSignup} onEnter={requireNotAuth} />
       <Route path="signup" component={Signup} onEnter={requireNotAuth} />
-      <Route path="bulletin" components={NewBulletin} onEnter={requireAuth} />
-      <Route path="clients" component={ViewClientList} onEnter={requireAuth} />
-      <Route path="clients/:id" component={ViewClient} onEnter={requireAuth} >
-      </Route>
+      <Route path="pic" component={Profile} onEnter={requireNotAuth} />
+    </Route>
 
-
-
-  </Route>
   </Router>
 ), document.getElementById('application'));

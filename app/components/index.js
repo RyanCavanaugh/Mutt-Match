@@ -9,38 +9,31 @@ var Index = React.createClass({
 
   mixins: [History, BackboneMixin],
 
-  getModels(){
-    return {
-      bulletin: store.getBulletins()
-    }
-},
-
-    componentWillMount(){
-      store.fetchBulletins();
-    },
-
-
+  getInitialState: function(){    //trying to get back intial values from server
+    return{
+      username: '',
+      dogsize: '',
+      dogage: '',
+      children: '',
+      otherpets: ''
+    };
+  },
 
   render() {
-      let bulletins = this.state.bulletin
+      let users = this.state.user
       let session= store.getSession();
       let currentUser = session.currentUser;
-      let username = (currentUser && currentUser.first_name)
+      let username = (currentUser && currentUser.username)
+
     return (
       <div>
-      <h6 className="welcome">Welcome {username}</h6>
-      <h1 className="bulletinBoard">Bulletin Board</h1>
+      <h3 className="welcome">Welcome {username}</h3>
         <ul>
-          {bulletins.map((b)=>{
-            return(
-            <li className="bulletinLines" key={b.objectId}>{b.title}<hr className="bulletinHR" />
-            <p>{b.message}</p>
-            <span className="bulletinSpan"><i>Contact</i>: {b.contact_person}<br />
-            <i>Best number to reach</i>: {b.contact_phone}<br />
-            <i>Best email</i>: {b.contact_email}</span>
-            </li>
-          )}
-        )}
+          <li>Name: {currentUser.username}</li>
+          <li>Dogs Size: {currentUser.dogsize}</li>
+          <li>Dogs Age: {currentUser.dogage}</li>
+          <li>Does well with children: {currentUser.children}</li>
+          <li>Does well with other pets: {currentUser.otherpets}</li>
         </ul>
       </div>
     );

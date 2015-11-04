@@ -2,7 +2,6 @@ import React from 'react';
 import { History } from 'react-router';
 import store from '../store';
 
-
 const Signup = React.createClass({
   propTypes: {
     location: React.PropTypes.object
@@ -34,7 +33,8 @@ const Signup = React.createClass({
     let { location } = this.props;
     if (location.state && location.state.nextPathname) {
       this.history.replaceState(null, location.state.nextPathname);
-    } else {
+    }
+    else {
       this.history.replaceState(null, '/');
     }
 
