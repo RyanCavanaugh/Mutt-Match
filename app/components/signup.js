@@ -108,7 +108,7 @@ const Signup = React.createClass({
                           <option value="30+">30+ minutes a day</option>
                         </select>
 
-        <button type="submit">Sign Up</button>
+        <button className="submit-buttons" type="submit">Sign Up</button>
         {this.state.error && (
           <p>{this.state.error}</p>
         )}

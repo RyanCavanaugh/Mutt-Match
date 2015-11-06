@@ -32,24 +32,27 @@ var App = React.createClass({
         <nav className="top-bar" data-topbar role="navigation">
           <ul className="title-area">
             <li className="name">
-              <h1><IndexLink to="/">MuttMatch.com</IndexLink></h1>
+              <h1><IndexLink to="/" className="logo">MuttMatch.com</IndexLink></h1>
             </li>
           </ul>
 
           <section className="top-bar-section">
             {/* Left Nav Section */}
             <ul className="left">
+
               <li className="name">
-                <Link to="/clients">Profile</Link>
+                <Link to="/profile">Profile</Link>
+              </li>
+              <li className="name">
+                <Link to="/search">New Search</Link>
+              </li>
+              <li className="name">
+                <Link to="/messages">Messages</Link>
+              </li>
+              <li className="name">
+                <Link to="/view-all-users">All Users</Link>
               </li>
 
-              <li className="has-dropdown">
-                <a href="#">View Available Dogs</a>
-                  <ul className="dropdown">
-                    <li><Link to="/bulletin">Near me</Link></li>
-                    <li><Link to="/create">New Search</Link></li>
-                  </ul>
-              </li>
             </ul>
 
             <ul className="right">

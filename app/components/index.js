@@ -15,7 +15,10 @@ var Index = React.createClass({
       dogsize: '',
       dogage: '',
       children: '',
-      otherpets: ''
+      otherpets: '',
+      hypoallergenic: '',
+      exercise: '',
+      training: ''
     };
   },
 
@@ -28,12 +31,15 @@ var Index = React.createClass({
     return (
       <div>
       <h3 className="welcome">Welcome {username}</h3>
-        <ul>
+        <ul className="profile-details">
           <li>Name: {currentUser.username}</li>
           <li>Dogs Size: {currentUser.dogsize}</li>
           <li>Dogs Age: {currentUser.dogage}</li>
           <li>Does well with children: {currentUser.children}</li>
           <li>Does well with other pets: {currentUser.otherpets}</li>
+          <li>Hypoallergenic dog: {currentUser.hypoallergenic}</li>
+          <li>Daily exercise: {currentUser.exercise}</li>
+          <li>Training: {currentUser.training}</li>
         </ul>
       </div>
     );

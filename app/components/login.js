@@ -47,9 +47,9 @@ const Login = React.createClass({
 
         <fieldset>
         <legend>Login</legend>
-        <input className="login-input" ref="email" placeholder="email" />
-        <input type="password" ref="password" placeholder="password" />
-        <button type="submit">Login</button>
+        <input className="login-input" ref="email" placeholder="Email" />
+        <input className="login-input" type="password" ref="password" placeholder="Password" />
+        <button className="submit-buttons" type="submit">Login</button>
         </fieldset>
 
 
@@ -58,12 +58,12 @@ const Login = React.createClass({
 
         <fieldset>
         <legend>Looking for a Dog</legend>
-        <Link to="/signup"><button>Sign Up</button></Link>
+        <Link to="/signup"><button className="submit-buttons">Sign Up</button></Link>
         </fieldset>
 
         <fieldset>
         <legend>Looking for a home for your dog</legend>
-        <Link to="/dog-signup"><button>Sign Up</button></Link>
+        <Link to="/dog-signup"><button className="submit-buttons">Sign Up</button></Link>
         </fieldset>
 
 

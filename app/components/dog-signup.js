@@ -86,13 +86,13 @@ const DogSignup = React.createClass({
                           <option value="no">No</option>
                         </select>
 
-                        Do you (or someone in the household) need a hypoallergenic dog?
+                        Is your dog a hypoallergenic breed/mix?
                         <select ref="hypoallergenic" defaultValue="no">
                           <option value="yes">Yes</option>
                           <option value="no">No</option>
                         </select>
 
-                        How much exercise do you give your dog with currently?
+                        How much do you exercise your dog currently?
                         <select ref="exercise" defaultValue="no">
                           <option value="none">Little to none</option>
                           <option value="10-20">10-20 minutes a day</option>
@@ -107,7 +107,7 @@ const DogSignup = React.createClass({
                           <option value="30+">30+ minutes a day</option>
                         </select>
 
-        <button type="submit">Sign Up</button>
+        <button className="submit-buttons" type="submit">Sign Up</button>
         {this.state.error && (
           <p>{this.state.error}</p>
         )}

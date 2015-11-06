@@ -6,17 +6,51 @@
 
 body
  {
-  background-color: #F3F3F3;
-}
+    background-color: #E0EEEE;
+ }
 
 .top-bar,
  {
-  background-color: #666666;
+  background-color: #668B8B;
+  height: 100px;
+  border-bottom: 3px solid #2F4F4F;
 }
-
 //
 //index page-bulletinBoard display
 //
+//---------------LOGIN PAGE STYLING-------------------------
+
+form .login-input{
+  border-radius: 10px;
+  border: 2px solid #2F4F4F;
+  font-family: monospace;
+  font-size: 20px;
+}
+
+form .submit-buttons {
+  background: linear-gradient(to top, #458B74, #66CDAA);
+  border-radius: 7px;
+  border-bottom: 3px solid #008B8B;
+  border-top: 2px solid #7FFFD4;
+}
+
+.logo {
+  font-size: 30px;
+  font-family: fantasy;
+  padding-top: 30px;
+}
+
+//__________________________________________________________
+
+//---------------USER PROFILE PAGE STYLING------------------
+
+.profile-details {
+  font-size: 15px;
+}
+
+//__________________________________________________________
+
+
 .welcome
  {
   margin-left: 10px;
@@ -69,25 +103,6 @@ body
   }
 
 //client view page and assistance components
-
-.assistance
- {
-  background-color: #F4EDDB;
-  padding-left: 20px;
-  padding-top: 15px;
-  position: relative;
-  height: 50px;
-
- }
-
-.add_asst
- {
-   float: right;
-   margin-right: 50%;
- }
-
-//assistance toggle//
-// this was copied off of a codepen session found on a google search
 
 .section.open {
   button {
