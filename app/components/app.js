@@ -49,9 +49,6 @@ var App = React.createClass({
               <li className="name">
                 <Link to="/messages">Messages</Link>
               </li>
-              <li className="name">
-                <Link to="/view-all-users">All Users</Link>
-              </li>
 
             </ul>
 

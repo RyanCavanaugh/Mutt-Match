@@ -9,7 +9,7 @@ import Login from './components/login';
 import Signup from './components/signup';
 import DogSignup from './components/dog-signup';
 import Message from './components/messages';
-import ViewUsers from './components/view-all-users';
+import ViewUsers from './components/view-users';
 
 function requireAuth(nextState, replaceState) {
   if( ! store.getSession().isAuthenticated) {
@@ -31,7 +31,7 @@ ReactDOM.render((
       <Route path="dog-signup" component={DogSignup} onEnter={requireNotAuth} />
       <Route path="signup" component={Signup} onEnter={requireNotAuth} />
       <Route path="message" component={Message} onEnter={requireNotAuth} />
-      <Route path="view-all-users" component={ViewUsers} onEnter={requireNotAuth} />
+      <Route path="view-users" component={ViewUsers} onEnter={requireNotAuth} />
     </Route>
 
   </Router>

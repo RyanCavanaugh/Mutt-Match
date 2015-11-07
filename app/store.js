@@ -8,11 +8,13 @@ import MessagesCollection from './models/messages-collection';
 
 let session = new Session();
 let users = new UserCollection();
+let usersCache = {};
 
 const Store = _.extend({}, Backbone.Events, {
 
   initialize() {
     this.listenTo(session, 'change', this.trigger.bind(this, 'change'));
+    this.listenTo(users, 'add change remove', this.trigger.bind(this, 'change'));
   },
 
   invalidateSession() {
@@ -39,7 +41,11 @@ const Store = _.extend({}, Backbone.Events, {
     return new Message();
   },
 
-  fetchUsers() {
+  getUsers(){
+    return users.toJSON();
+  },
+
+  fetchUsers(){
     return users.fetch();
   },
 
