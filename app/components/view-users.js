@@ -32,7 +32,8 @@ render() {
 
         <ul>
             {users.map((c, i) => {
-              return (<li key={c.objectId || i}><Link to={'/profile/${c.objectId}'}>{c.username}</Link></li>);})}
+              return (<li key={c.objectId || i}><Link to={`/view-user-profile/${c.objectId}`}>{c.username}</Link></li>);})
+            }
         </ul>
 
         </fieldset>

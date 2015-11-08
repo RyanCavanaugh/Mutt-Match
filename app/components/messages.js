@@ -12,7 +12,7 @@ mixins: [History],
     store.getMessagesCollection().create({
       messageText: this.refs.messageText.value,
     }, {wait:true});
-    this.history.pushState({}, "/message-sent")
+    this.history.pushState({}, "/view-users")
 },
   render() {
     return (

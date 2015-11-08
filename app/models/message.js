@@ -8,7 +8,8 @@ const Message = Backbone.Model.extend({
   defaults(){
     return {
     messageText: "",
-    creator: ""
+    creator: "",
+    recipient: ""
   }
 },
 toJSON(options) {
@@ -19,6 +20,11 @@ toJSON(options) {
         "__type": "Pointer",
         "className": "_User",
         "objectId": this.get('creator').objectId
+      },
+      recipient: {
+        "__type": "Pointer",
+        "className": "_User",
+        "objectId": this.get('recipient').objectId
       }
     });
   } else { // I'm using toJSON to use with React
@@ -28,13 +34,17 @@ toJSON(options) {
 
 save() {
   let currentUser = store.getSession().currentUser;
+  let recipient = store.getRecipient().objectId;
+
   if(currentUser) {
     if(this.isNew()) {
       this.set('creator', currentUser);
+      this.set('recipient', user.objectId);
     }
     Backbone.Model.prototype.save.apply(this, arguments);
-  } else {
-    return new Promise((_, reject) => reject("Invalid session"));
+    }
+    else {
+      return new Promise((_, reject) => reject("Invalid session"));
   }
 }
 

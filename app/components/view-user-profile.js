@@ -1,6 +1,6 @@
 import React from 'react';
 import store from '../store';
-import { History } from 'react-router';
+import { History, Link } from 'react-router';
 import BackboneMixin from '../mixins/backbone';
 
 const ViewUserProfile = React.createClass({
@@ -8,17 +8,18 @@ const ViewUserProfile = React.createClass({
 
   getInitialState() {
     return {
-      isEditing: false
+      open: false,
+      class: "user"
     };
   },
 
   componentWillMount() {
-    store.fetchUsers(this.props.params.id);
+    store.getUser(this.props.params.id);
   },
 
   getModels() {
     return {
-      user: store.getUsers(this.props.params.id),
+      user: store.getUser(this.props.params.id),
     };
   },
 
@@ -28,10 +29,10 @@ const ViewUserProfile = React.createClass({
       return (
         <div>
           <h1>{user.username}</h1>
+          <h3>{user.userage}</h3>
+          <h3>{user.dogsize}</h3>
 
-          <ul>
-            {user.map((c) => <li key={c.objectId}>{c.username}</li>)}
-          </ul>
+          <Link to="messages"><button>Send {user.username} a message</button></Link>
         </div>
       );
     }

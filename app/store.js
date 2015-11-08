@@ -8,6 +8,7 @@ import MessagesCollection from './models/messages-collection';
 
 let session = new Session();
 let users = new UserCollection();
+let message = new MessagesCollection();
 let usersCache = {};
 
 const Store = _.extend({}, Backbone.Events, {
@@ -34,7 +35,7 @@ const Store = _.extend({}, Backbone.Events, {
   },
 
   getMessagesCollection() {
-    return (messages = messages || new MessagesCollection());
+    return (message = message || new MessagesCollection());
   },
 
   getNewMessage() {
@@ -54,7 +55,25 @@ const Store = _.extend({}, Backbone.Events, {
   },
 
   getUser(id) {
-    let
+   let user = users.get(id);
+    if(user) {
+      return user.toJSON();
+    }
+    else {
+      users.fetch();
+      return {};
+    }
+  },
+
+  getRecipient(id){
+    let user = users.get(id);
+     if(user) {
+       return user.toJSON();
+     }
+     else {
+       users.fetch();
+       return {};
+     }
   },
 
 //this user should become the currentUser, instead of
