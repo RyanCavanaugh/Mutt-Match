@@ -8,8 +8,8 @@ import Index from './components/index';
 import Login from './components/login';
 import Signup from './components/signup';
 import DogSignup from './components/dog-signup';
-import Message from './components/messages';
 import ViewUsers from './components/view-users';
+import ViewUserProfile from './components/view-user-profile';
 
 function requireAuth(nextState, replaceState) {
   if( ! store.getSession().isAuthenticated) {
@@ -28,10 +28,11 @@ ReactDOM.render((
     <Route path="/" component={App}>
       <IndexRoute component={Index} onEnter={requireAuth} />
       <Route path="login" component={Login} onEnter={requireNotAuth} />
+      <Route path="profile" component={Index} onEnter={requireAuth} />
+      <Route path="profile/:id" component={ViewUserProfile} onEnter={requireAuth} /> //nested route?
       <Route path="dog-signup" component={DogSignup} onEnter={requireNotAuth} />
       <Route path="signup" component={Signup} onEnter={requireNotAuth} />
-      <Route path="message" component={Message} onEnter={requireNotAuth} />
-      <Route path="view-users" component={ViewUsers} onEnter={requireNotAuth} />
+      <Route path="view-users" component={ViewUsers} onEnter={requireAuth} />
     </Route>
 
   </Router>

@@ -45,8 +45,16 @@ const Store = _.extend({}, Backbone.Events, {
     return users.toJSON();
   },
 
+  getUserCollection(){
+    return (users = users || new UserCollection());
+  },
+
   fetchUsers(){
     return users.fetch();
+  },
+
+  getUser(id) {
+    let
   },
 
 //this user should become the currentUser, instead of

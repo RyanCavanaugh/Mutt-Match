@@ -55,29 +55,29 @@ const Signup = React.createClass({
         <input type="text" ref="password" placeholder="Password" />
 
                       Your Age:
-                      <select ref="userage" defaultValue="19-29">
-                        <option value="18 or less">18 or less</option>
-                        <option value="19-29">19-29</option>
-                        <option value="30-44">30-44</option>
-                        <option value="45-69">45-69</option>
-                        <option value="70 and up">70 and up</option>
+                      <select ref="userage" defaultValue="Age: 19-29">
+                        <option value="Age: 18 or less">18 or less</option>
+                        <option value="Age: 19-29">19-29</option>
+                        <option value="Age: 30-44">30-44</option>
+                        <option value="Age: 45-69">45-69</option>
+                        <option value="Age: 70 and up">70 and up</option>
                       </select>
 
                       Dog Size Preffered:
-                      <select ref="dogsize" defaultValue="medium">
-                        <option value="itty-bitty">Itty Bitty (Less than 10 lbs)</option>
-                        <option value="small">Small (11-22 lbs)</option>
-                        <option value="medium">Medium (23-50 lbs)</option>
-                        <option value="large">Large (51-80 lbs)</option>
-                        <option value="super-sized">Super Sized (80 lbs and up)</option>
+                      <select ref="dogsize" defaultValue="Dog Size: Medium">
+                        <option value="Dog Size: Itty-bitty">Itty Bitty (Less than 10 lbs)</option>
+                        <option value="Dog Size: Small">Small (11-22 lbs)</option>
+                        <option value="Dog Size: Medium">Medium (23-50 lbs)</option>
+                        <option value="Dog Size: Large">Large (51-80 lbs)</option>
+                        <option value="Dog Size: Super-sized">Super Sized (80 lbs and up)</option>
                       </select>
 
                         Are there other pets in the household?
-                        <select ref="otherpets" defaultValue="none">
-                          <option value="cat">A Cat</option>
-                          <option value="dog">A Dog</option>
-                          <option value="cat-dog">A Cat and Dog</option>
-                          <option value="none">None</option>
+                        <select ref="otherpets" defaultValue="Other Pets: None">
+                          <option value="Other Pets: Cat">A Cat</option>
+                          <option value="Other Pets: Dog">A Dog</option>
+                          <option value="Other Pets: Cat-dog">A Cat and Dog</option>
+                          <option value="Other Pets: None">None</option>
                         </select>
 
                         Are there (or will there be) children in the household?

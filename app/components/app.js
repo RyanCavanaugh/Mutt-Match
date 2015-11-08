@@ -32,7 +32,7 @@ var App = React.createClass({
         <nav className="top-bar" data-topbar role="navigation">
           <ul className="title-area">
             <li className="name">
-              <h1><IndexLink to="/" className="logo">MuttMatch.com</IndexLink></h1>
+              <h1><IndexLink to="/" className="logo">PerfectPawtner.com</IndexLink></h1>
             </li>
           </ul>
 
@@ -48,6 +48,9 @@ var App = React.createClass({
               </li>
               <li className="name">
                 <Link to="/messages">Messages</Link>
+              </li>
+              <li className="name">
+                <Link to="/view-users">All Users</Link>
               </li>
 
             </ul>

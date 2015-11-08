@@ -1,6 +1,6 @@
 import React from 'react';
 import store from '../store';
-import {History} from 'react-router';
+import {History, Link} from 'react-router';
 import BackboneMixin from '../mixins/backbone';
 import _ from 'underscore';
 
@@ -8,9 +8,8 @@ const ViewUsers = React.createClass({
 
   mixins: [History, BackboneMixin],
 
-componentWillMount(){
+componentWillMount() {
   store.fetchUsers();
-  console.log(users);
 },
 
 getModels(){
@@ -21,7 +20,7 @@ getModels(){
 
 render() {
     let users = this.state.users;
-
+    console.log(users);
     return (
 
       <div className="row">
@@ -32,9 +31,9 @@ render() {
         <legend><h3>ALL USERS</h3></legend>
 
         <ul>
-            {users.map((c) => <li key={c.objectId}>{c.username}, {c.dogage}, {c.userage}</li>)}
+            {users.map((c, i) => {
+              return (<li key={c.objectId || i}><Link to={'/profile/${c.objectId}'}>{c.username}</Link></li>);})}
         </ul>
-
 
         </fieldset>
 
