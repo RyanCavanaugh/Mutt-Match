@@ -47,10 +47,10 @@ var App = React.createClass({
                 <Link to="/search">New Search</Link>
               </li>
               <li className="name">
-                <Link to="/messages">Messages</Link>
+                <Link to="/view-users">All Users</Link>
               </li>
               <li className="name">
-                <Link to="/view-users">All Users</Link>
+                <Link to="/pic-upload">Upload Img</Link>
               </li>
 
             </ul>

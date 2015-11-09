@@ -32,6 +32,7 @@ var Index = React.createClass({
       <div>
       <h3 className="welcome">Welcome {username}</h3>
         <ul className="profile-details">
+          <li>{currentUser.userImage}</li>
           <li>Name: {currentUser.username}</li>
           <li>Dogs Size: {currentUser.dogsize}</li>
           <li>Dogs Age: {currentUser.dogage}</li>

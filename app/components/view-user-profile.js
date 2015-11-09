@@ -8,7 +8,6 @@ const ViewUserProfile = React.createClass({
 
   getInitialState() {
     return {
-      open: false,
       class: "user"
     };
   },
@@ -32,7 +31,8 @@ const ViewUserProfile = React.createClass({
           <h3>{user.userage}</h3>
           <h3>{user.dogsize}</h3>
 
-          <Link to="messages"><button>Send {user.username} a message</button></Link>
+          <Link to="create-comment"><button>Create a Comment</button></Link>
+
         </div>
       );
     }

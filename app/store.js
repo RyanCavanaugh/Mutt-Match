@@ -3,19 +3,20 @@ import Backbone from 'backbone';
 import Session from './models/session';
 import User from './models/user';
 import UserCollection from './models/user-collection';
-import Message from './models/message';
-import MessagesCollection from './models/messages-collection';
+import Comment from './models/comment';
+import CommentsCollection from './models/comments-collection';
 
 let session = new Session();
 let users = new UserCollection();
-let message = new MessagesCollection();
 let usersCache = {};
+let comments = new CommentsCollection();
 
 const Store = _.extend({}, Backbone.Events, {
 
   initialize() {
     this.listenTo(session, 'change', this.trigger.bind(this, 'change'));
     this.listenTo(users, 'add change remove', this.trigger.bind(this, 'change'));
+    this.listenTo(comments, 'add change remove', this.trigger.bind(this, 'change'));
   },
 
   invalidateSession() {
@@ -32,14 +33,6 @@ const Store = _.extend({}, Backbone.Events, {
 
   restoreSession() {
     return session.restore();
-  },
-
-  getMessagesCollection() {
-    return (message = message || new MessagesCollection());
-  },
-
-  getNewMessage() {
-    return new Message();
   },
 
   getUsers(){
@@ -74,6 +67,33 @@ const Store = _.extend({}, Backbone.Events, {
        users.fetch();
        return {};
      }
+  },
+
+  getComments(){
+    return comments.toJSON();
+  },
+
+  fetchComments(){
+    return comments.fetch;
+  },
+
+  getComment(id){
+    let comment = comments.get(id);
+      if(comment){
+        return comment.toJSON();
+      }
+      else {
+        comments.fetch();
+        return {};
+      }
+  },
+
+  saveComment(comment, options){
+    return comments.create(comment, options);
+  },
+
+  destroyComment(comment){
+    return comments.get(comment.objectId).destroy();
   },
 
 //this user should become the currentUser, instead of
