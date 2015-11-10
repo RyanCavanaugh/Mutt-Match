@@ -27,6 +27,7 @@ const ViewUserProfile = React.createClass({
 
       return (
         <div>
+    
           <h1>{user.username}</h1>
           <h3>{user.userage}</h3>
           <h3>{user.dogsize}</h3>

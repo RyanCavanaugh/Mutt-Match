@@ -3,6 +3,7 @@ import store from '../store';
 import {History, Link} from 'react-router';
 import BackboneMixin from '../mixins/backbone';
 import _ from 'underscore';
+import Index from 'components/index';
 
 const ViewUsers = React.createClass({
 
@@ -40,10 +41,11 @@ const ViewUsers = React.createClass({
             {users.map((c, i) => {
               return (<li key={c.objectId || i}><Link to={`/view-user-profile/${c.objectId}`}>
                 <h3>{c.username}</h3>
-
+                <div><img src={c.userimage.url} ></img></div>
                 <h5>{c.dogage}</h5>
                 <h5>{c.dogsize}</h5>
-                </Link></li>);})
+                </Link></li>);
+              })
             }
         </ul>
 

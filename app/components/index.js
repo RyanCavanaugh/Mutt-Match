@@ -65,10 +65,6 @@ var Index = React.createClass({
   },
 
 
-
-
-
-
   render() {
 
     let users = this.state.user;
@@ -82,17 +78,13 @@ var Index = React.createClass({
       <h3 className="welcome">Welcome {username}</h3>
         <ul className="profile-details">
 
-<li>
-
-  <form onSubmit={this.handleSubmit}>
-    {users.userimage && <div><img src={users.userimage.url} alt="Profile picture" /></div>}
-    <button onClick={this.handleUploadPhoto}>Upload Photo</button>
-    <button type="submit">Save</button>
-  </form>
-
-</li>
-
-
+          <li>
+            <form onSubmit={this.handleSubmit}>
+              {users.userimage && <div><img src={users.userimage.url} alt="Profile picture" /></div>}
+              <button onClick={this.handleUploadPhoto}>Upload Photo</button>
+              <button type="submit">Save</button>
+            </form>
+          </li>
           <li>Name: {currentUser.username}</li>
           <li>Dogs Size: {currentUser.dogsize}</li>
           <li>Dogs Age: {currentUser.dogage}</li>
