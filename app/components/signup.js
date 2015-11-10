@@ -44,6 +44,7 @@ const Signup = React.createClass({
   },
 
   render() {
+
     return (
     <div className="row">
       <div className="small-10 columns">
@@ -53,7 +54,7 @@ const Signup = React.createClass({
         <input type="text" ref="username" placeholder="Username" />
         <input type="text" ref="email" placeholder="Email" />
         <input type="text" ref="password" placeholder="Password" />
-    
+
                       Your Age:
                       <select ref="userage" defaultValue="Age: 19-29">
                         <option value="Age: 18 or less">18 or less</option>
@@ -118,6 +119,6 @@ const Signup = React.createClass({
     </div>
     )
   }
-})
+});
 
 export default Signup;

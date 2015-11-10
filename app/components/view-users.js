@@ -8,17 +8,23 @@ const ViewUsers = React.createClass({
 
   mixins: [History, BackboneMixin],
 
-componentWillMount() {
-  store.fetchUsers();
-},
+  getInitialState(){},
 
-getModels(){
-  return {
-    users: store.getUsers()
-  };
-},
+  componentWillMount() {
+    store.fetchUsers();
+  },
 
-render() {
+  componentDidMout(){
+
+  },
+
+  getModels(){
+    return {
+      users: store.getUsers()
+    };
+  },
+
+  render() {
     let users = this.state.users;
     console.log(users);
     return (
@@ -30,9 +36,14 @@ render() {
         <fieldset>
         <legend><h3>ALL USERS</h3></legend>
 
-        <ul>
+        <ul className="all-users">
             {users.map((c, i) => {
-              return (<li key={c.objectId || i}><Link to={`/view-user-profile/${c.objectId}`}>{c.username}</Link></li>);})
+              return (<li key={c.objectId || i}><Link to={`/view-user-profile/${c.objectId}`}>
+                <h3>{c.username}</h3>
+
+                <h5>{c.dogage}</h5>
+                <h5>{c.dogsize}</h5>
+                </Link></li>);})
             }
         </ul>
 
@@ -42,7 +53,7 @@ render() {
       </div>
       </div>
     );
-}
+  }
 
 });
 

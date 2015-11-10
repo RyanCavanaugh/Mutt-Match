@@ -2,9 +2,8 @@ import React from 'react';
 import BackboneMixin from '../mixins/backbone';
 import store from '../store';
 import update from 'react-addons-update';
-import { Link } from 'react-router';
 
-const PicUpload= React.createClass({
+const Profile = React.createClass({
 
   mixins: [BackboneMixin],
 
@@ -37,13 +36,13 @@ const PicUpload= React.createClass({
 
   handleUploadPhoto(e) {
     e.preventDefault();
-    filepicker.pick(
+    filepicker.pick(  //use this function
       (Blob) => {
         this.setState({
           user: update(this.state.user, {
-            avatar: {$set: Blob}
-          })
-        });
+            avatar: {$set: Blob}   //would be userImage
+          })  //want to save user right when uploaded
+        }); //need userimage to be a object column in parse
       }
     );
   },
@@ -78,4 +77,4 @@ const PicUpload= React.createClass({
   }
 });
 
-export default PicUpload;
+export default Profile;

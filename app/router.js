@@ -12,8 +12,6 @@ import ViewUsers from './components/view-users';
 import ViewUserProfile from './components/view-user-profile';
 import Comment from './components/comment-list';
 import AddComment from './components/create-comment';
-import PicUpload from '/.components/pic-upload';
-
 
 function requireAuth(nextState, replaceState) {
   if( ! store.getSession().isAuthenticated) {
@@ -39,7 +37,6 @@ ReactDOM.render((
       <Route path="view-users" component={ViewUsers} onEnter={requireAuth} />
       <Route path="comment-list" component={Comment} onEnter={requireAuth} />
       <Route path="create-comment" component={AddComment} onEnter={requireAuth} />
-      <Route path="pic-upload" component={PicUpload} onEnter={requireAuth} />
     </Route>
 
   </Router>

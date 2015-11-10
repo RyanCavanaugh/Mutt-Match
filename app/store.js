@@ -58,17 +58,6 @@ const Store = _.extend({}, Backbone.Events, {
     }
   },
 
-  getRecipient(id){
-    let user = users.get(id);
-     if(user) {
-       return user.toJSON();
-     }
-     else {
-       users.fetch();
-       return {};
-     }
-  },
-
   getComments(){
     return comments.toJSON();
   },
@@ -101,7 +90,7 @@ const Store = _.extend({}, Backbone.Events, {
     let user = new User(attributes);
     return user.save().then(()=> {
       return session.authenticate({sessionToken:
-user.get('sessionToken')});
+        user.get('sessionToken')});
     });
   },
 

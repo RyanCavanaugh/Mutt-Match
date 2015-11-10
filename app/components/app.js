@@ -44,13 +44,7 @@ var App = React.createClass({
                 <Link to="/profile">Profile</Link>
               </li>
               <li className="name">
-                <Link to="/search">New Search</Link>
-              </li>
-              <li className="name">
                 <Link to="/view-users">All Users</Link>
-              </li>
-              <li className="name">
-                <Link to="/pic-upload">Upload Img</Link>
               </li>
 
             </ul>

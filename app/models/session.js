@@ -21,11 +21,9 @@ const Session = Backbone.Model.extend({
       } else if (options.sessionToken) {
         // I'm authenticating with a sessionToken
         localStorage.setItem('parse-session-token', options.sessionToken);
-        var user = new User(options);
-        this.set('currentUser', user);
-        this.trigger('authenticationSucceeded');
-        return user.fetch().then(() => {
-          this.set('currentUser', user.clone());
+        this.set('currentUser', new User(options));
+        return $.ajax("https://api.parse.com/1/users/me").then((response) => {
+          this.set('currentUser', new User(response));
           return true;
         }, () => false);
       } else {
