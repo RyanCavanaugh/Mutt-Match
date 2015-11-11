@@ -32,22 +32,11 @@ var App = React.createClass({
         <nav className="top-bar" data-topbar role="navigation">
           <ul className="title-area">
             <li className="name">
-              <h1><IndexLink to="/" className="logo">PerfectPawtner.com</IndexLink></h1>
+              <h1><IndexLink to="/" className="logo">Re-dopt.com</IndexLink></h1>
             </li>
           </ul>
 
           <section className="top-bar-section">
-            {/* Left Nav Section */}
-            <ul className="left">
-
-              <li className="name">
-                <Link to="/profile">Profile</Link>
-              </li>
-              <li className="name">
-                <Link to="/view-users">All Users</Link>
-              </li>
-
-            </ul>
 
             <ul className="right">
               {loggedIn &&
@@ -59,6 +48,17 @@ var App = React.createClass({
                 </li>
                   }
               </ul>
+
+            <ul className="right">
+              <li className="name">
+                <Link to="/view-users">All Users</Link>
+              </li>
+              <li className="name">
+                <Link to="/index">Profile</Link>
+              </li>
+            </ul>
+
+
           </section>
         </nav>
 

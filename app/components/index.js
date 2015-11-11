@@ -26,7 +26,6 @@ var Index = React.createClass({
 
 
 
-
   getModels() {
     var currentUser = store.getSession().currentUser;
     return {
@@ -74,17 +73,25 @@ var Index = React.createClass({
 
 
     return (
-      <div>
-      <h3 className="welcome">Welcome {username}</h3>
-        <ul className="profile-details">
+    <div>
+    <div className="row">
+      <div className="medium-3 columns"><h3 className="welcome">Welcome {username}</h3></div>
+    </div>
 
+      <div className="row">
+
+        <ul className="profile-details">
+          <div className="medium-6 columns">
           <li>
             <form onSubmit={this.handleSubmit}>
-              {users.userimage && <div><img src={users.userimage.url} alt="Profile picture" /></div>}
+              {users.userimage && <div><img className="user-image" src={users.userimage.url} alt="Profile picture" /></div>}
               <button onClick={this.handleUploadPhoto}>Upload Photo</button>
               <button type="submit">Save</button>
             </form>
           </li>
+          </div>
+
+          <div className="medium-6 columns">
           <li>Name: {currentUser.username}</li>
           <li>Dogs Size: {currentUser.dogsize}</li>
           <li>Dogs Age: {currentUser.dogage}</li>
@@ -93,16 +100,12 @@ var Index = React.createClass({
           <li>Hypoallergenic dog: {currentUser.hypoallergenic}</li>
           <li>Daily exercise: {currentUser.exercise}</li>
           <li>Training: {currentUser.training}</li>
+          </div>
         </ul>
+        </div>
+        </div>
 
 
-
-
-
-
-
-
-</div>
 
 
     );

@@ -28,8 +28,9 @@ const Signup = React.createClass({
     let hypoallergenic = this.refs.hypoallergenic.value;
     let exercise = this.refs.exercise.value;
     let training = this.refs.training.value;
+    let bio = this.refs.bio.value;
 
-  store.createUser({username, email, password, userage, dogsize, otherpets, children, hypoallergenic, exercise, training}).then(()=> {
+  store.createUser({username, email, password, userage, dogsize, otherpets, children, hypoallergenic, exercise, training, bio}).then(()=> {
     let { location } = this.props;
     if (location.state && location.state.nextPathname) {
       this.history.replaceState(null, location.state.nextPathname);
@@ -51,9 +52,9 @@ const Signup = React.createClass({
       <form onSubmit={this.handleSubmit}>
         <fieldset>
         <legend>Human Sign Up</legend>
-        <input type="text" ref="username" placeholder="Username" />
-        <input type="text" ref="email" placeholder="Email" />
-        <input type="text" ref="password" placeholder="Password" />
+        <input className= "user-signup" type="text" ref="username" placeholder="Username" />
+        <input className= "user-signup" type="text" ref="email" placeholder="Email" />
+        <input className= "user-signup" type="text" ref="password" placeholder="Password" />
 
                       Your Age:
                       <select ref="userage" defaultValue="Age: 19-29">
@@ -65,12 +66,12 @@ const Signup = React.createClass({
                       </select>
 
                       Dog Size Preffered:
-                      <select ref="dogsize" defaultValue="Dog Size: Medium">
-                        <option value="Dog Size: Itty-bitty">Itty Bitty (Less than 10 lbs)</option>
-                        <option value="Dog Size: Small">Small (11-22 lbs)</option>
-                        <option value="Dog Size: Medium">Medium (23-50 lbs)</option>
-                        <option value="Dog Size: Large">Large (51-80 lbs)</option>
-                        <option value="Dog Size: Super-sized">Super Sized (80 lbs and up)</option>
+                      <select ref="dogsize" defaultValue="Medium">
+                        <option value="Itty-bitty">Itty Bitty (Less than 10 lbs)</option>
+                        <option value="Small">Small (11-22 lbs)</option>
+                        <option value="Medium">Medium (23-50 lbs)</option>
+                        <option value="Large">Large (51-80 lbs)</option>
+                        <option value="Super-sized">Super Sized (80 lbs and up)</option>
                       </select>
 
                         Are there other pets in the household?
@@ -109,7 +110,12 @@ const Signup = React.createClass({
                           <option value="30+">30+ minutes a day</option>
                         </select>
 
+                        Write a short Bio: <br></br>
+                        <input type="textarea" className="bio-section"></input>
+        <br></br>
+        <br></br>
         <button className="submit-buttons" type="submit">Sign Up</button>
+
         {this.state.error && (
           <p>{this.state.error}</p>
         )}

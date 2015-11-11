@@ -50,9 +50,9 @@ const DogSignup = React.createClass({
       <form onSubmit={this.handleSubmit}>
         <fieldset>
         <legend>Dog Sign Up</legend>
-        <input type="text" ref="username" placeholder="Username" />
-        <input type="text" ref="email" placeholder="Email" />
-        <input type="text" ref="password" placeholder="Password" />
+        <input className= "user-signup" type="text" ref="username" placeholder="Username" />
+        <input className= "user-signup" type="text" ref="email" placeholder="Email" />
+        <input className= "user-signup" type="text" ref="password" placeholder="Password" />
 
                       Your dogs age:
                       <select ref="dogage" defaultValue="adult">
@@ -107,7 +107,12 @@ const DogSignup = React.createClass({
                           <option value="30+">30+ minutes a day</option>
                         </select>
 
+                        Write a short Bio: <br></br>
+                        <input type="textarea" className="bio-section"></input>
+        <br></br>
+        <br></br>
         <button className="submit-buttons" type="submit">Sign Up</button>
+
         {this.state.error && (
           <p>{this.state.error}</p>
         )}

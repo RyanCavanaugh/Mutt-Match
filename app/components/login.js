@@ -42,10 +42,10 @@ const Login = React.createClass({
   render() {
     return (
     <div className="row">
-     <div className="small-10 columns">
+     <div className="medium-10 columns">
       <form onSubmit={this.handleSubmit}>
 
-        <fieldset>
+        <fieldset className="left-fieldset">
         <legend>Login</legend>
         <input className="login-input" ref="email" placeholder="Email" />
         <input className="login-input" type="password" ref="password" placeholder="Password" />
@@ -53,7 +53,7 @@ const Login = React.createClass({
         </fieldset>
 
 
-        <fieldset>
+        <fieldset className="right-fieldset">
         <legend>Create an account</legend>
 
         <fieldset>
