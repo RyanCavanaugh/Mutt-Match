@@ -20,7 +20,8 @@ var Index = React.createClass({
       hypoallergenic: '',
       exercise: '',
       training: '',
-      isEditing: false
+      isEditing: false,
+      bio: ''
     };
   },
 
@@ -73,40 +74,37 @@ var Index = React.createClass({
 
 
     return (
-    <div>
+    <div className="prof">
     <div className="row">
-      <div className="medium-3 columns"><h3 className="welcome">Welcome {username}</h3></div>
+      <div className="medium-5 columns"><h3 className="welcome">Welcome {username}</h3></div>
     </div>
 
       <div className="row">
 
         <ul className="profile-details">
-          <div className="medium-6 columns">
+          <div className="medium-5 columns">
           <li>
             <form onSubmit={this.handleSubmit}>
               {users.userimage && <div><img className="user-image" src={users.userimage.url} alt="Profile picture" /></div>}
-              <button onClick={this.handleUploadPhoto}>Upload Photo</button>
-              <button type="submit">Save</button>
             </form>
           </li>
           </div>
 
-          <div className="medium-6 columns">
-          <li>Name: {currentUser.username}</li>
-          <li>Dogs Size: {currentUser.dogsize}</li>
-          <li>Dogs Age: {currentUser.dogage}</li>
-          <li>Does well with children: {currentUser.children}</li>
-          <li>Does well with other pets: {currentUser.otherpets}</li>
-          <li>Hypoallergenic dog: {currentUser.hypoallergenic}</li>
-          <li>Daily exercise: {currentUser.exercise}</li>
-          <li>Training: {currentUser.training}</li>
+          <div className="large-7 columns">
+          <li><h4><strong>Dog Size: </strong></h4><h5>{currentUser.dogsize}</h5></li>
+          <li><h4><strong>Children: </strong></h4><h5>{currentUser.children}</h5></li>
+          <li><h4><strong>Other pets: </strong></h4><h5>{currentUser.otherpets}</h5></li>
+          <li><h4><strong>Hypoallergenic dog: </strong></h4><h5>{currentUser.hypoallergenic}</h5></li>
+          <li><h4><strong>Daily exercise: </strong></h4><h5>{currentUser.exercise}</h5></li>
+          <li><h4><strong>Training: </strong></h4><h5>{currentUser.training}</h5></li>
+          <button onClick={this.handleUploadPhoto}>Upload Photo</button>
           </div>
         </ul>
         </div>
+          <div className="row">
+              <h2>Bio: </h2><h4>{currentUser.bio}</h4>
+          </div>
         </div>
-
-
-
 
     );
   }

@@ -48,7 +48,7 @@ const Signup = React.createClass({
 
     return (
     <div className="row">
-      <div className="small-10 columns">
+      <div className="medium-10 columns">
       <form onSubmit={this.handleSubmit}>
         <fieldset>
         <legend>Human Sign Up</legend>
@@ -111,7 +111,7 @@ const Signup = React.createClass({
                         </select>
 
                         Write a short Bio: <br></br>
-                        <input type="textarea" className="bio-section"></input>
+                      <input type="textarea" ref="bio" className="bio-section"></input>
         <br></br>
         <br></br>
         <button className="submit-buttons" type="submit">Sign Up</button>

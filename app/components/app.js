@@ -54,7 +54,7 @@ var App = React.createClass({
                 <Link to="/view-users">All Users</Link>
               </li>
               <li className="name">
-                <Link to="/index">Profile</Link>
+                <Link to="/profile">Profile</Link>
               </li>
             </ul>
 

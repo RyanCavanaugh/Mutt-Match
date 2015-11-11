@@ -30,31 +30,44 @@ const ViewUsers = React.createClass({
     console.log(users);
     return (
 
-      <div className="row">
-       <div className="small-10 columns">
+
+
         <form onSubmit={this.handleSubmit}>
 
-
         <h2>ALL USERS</h2>
+
+        <div className="row">
+          <div className="large-3 columns">
 
         <ul className="all-users">
             {users.map((c, i) => {
               return (<li key={c.objectId || i}><Link to={`/view-user-profile/${c.objectId}`}>
-                <h3>{c.username}</h3>
-                <div><img className="user-image-two" src={c.userimage.url} ></img></div>
+
+
+
+                <div className="userImageBox">
+
+                <div>
+                  <img className="user-image-two" src={c.userimage.url} ></img>
+                </div>
+
                   <h5><strong>Dog Size: </strong>{c.dogsize}</h5>
                   <h5><strong>Hypoallergenic: </strong>{c.hypoallergenic}</h5>
                   <h5><strong>Children: </strong>{c.children}</h5>
-                </Link></li>);
+                  </div>
+
+
+                  </Link>
+                </li>);
               })
             }
         </ul>
 
-
+          </div>
+          </div>
 
         </form>
-      </div>
-      </div>
+
     );
   }
 

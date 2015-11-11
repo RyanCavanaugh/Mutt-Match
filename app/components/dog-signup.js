@@ -29,8 +29,9 @@ const DogSignup = React.createClass({
     let hypoallergenic = this.refs.hypoallergenic.value;
     let exercise = this.refs.exercise.value;
     let training = this.refs.training.value;
+    let bio = this.refs.bio.value;
 
-  store.createUser({username, email, password, dogage, dogsize, otherpets, children, hypoallergenic, exercise, training}).then(()=> {
+  store.createUser({username, email, password, dogage, dogsize, otherpets, children, hypoallergenic, exercise, training, bio}).then(()=> {
     let { location } = this.props;
     if (location.state && location.state.nextPathname) {
       this.history.replaceState(null, location.state.nextPathname);
@@ -108,7 +109,7 @@ const DogSignup = React.createClass({
                         </select>
 
                         Write a short Bio: <br></br>
-                        <input type="textarea" className="bio-section"></input>
+                        <input type="textarea" ref="bio" className="bio-section"></input>
         <br></br>
         <br></br>
         <button className="submit-buttons" type="submit">Sign Up</button>

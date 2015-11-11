@@ -14,14 +14,14 @@ body
 
 .top-bar,
  {
-  background-color: #5F9EA0;
+  background-color: #00688B;
   height: 150px;
-  border-bottom: 5px solid #2F4F4F;
+  border-bottom: 10px solid #FFFACD;
 }
 
 .logo {
   font-size: 60px;
-  font-family: fantasy;
+  font-family: Helvetica, sans-serif;
   margin-top: 35px;
   margin-right: 20px;
 }
@@ -75,6 +75,10 @@ form .submit-buttons {
   list-style: none;
 }
 
+.prof {
+  float: left;
+}
+
 .all-users {
   color:red;
   list-style: none;
@@ -86,6 +90,10 @@ form .submit-buttons {
   margin: 20px;
 }
 
+.userImageBox:hover{
+  background: #FFF68F;
+}
+
 .user-image{
   border: 5px solid black;
   border-radius: 45px;
@@ -94,10 +102,33 @@ form .submit-buttons {
 }
 
 .user-image-two {
-  border: 5px solid black;
-  border-radius: 45px;
-  max-width: 400px;
-  max-height: 400px;
+  border-bottom: 5px solid black;
+  border-radius: 15px 15px 0px 0px;
+  max-width: 200px;
+  max-height: 200px;
+}
+
+.user-profile-top-row {
+  margin-top: 45px;
+  margin-left: 45px;
+}
+
+.userImageBox {
+  border: 3px solid black;
+  border-radius: 15px 15px 15px 15px;
+  background-color: #E0EEEE;
+  width: 201px;
+  margin-bottom: 15px;
+  display: inline-block;
+}
+
+.spread {
+  padding-right: 20px;
+}
+
+ul > .test {
+ list-style: none;
+ display: inline-block;
 }
 
 //__________________________________________________________
