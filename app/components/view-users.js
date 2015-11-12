@@ -30,7 +30,12 @@ const ViewUsers = React.createClass({
 
         <form onSubmit={this.handleSubmit}>
 
-        <h2>ALL USERS</h2>
+        <div className="row">
+
+          <div className="large-10 columns">
+            <h2 className="new-home">Find a new home</h2>
+          </div>
+        </div>
 
           <div className="row">
             <div className="large-3 columns">

@@ -17,15 +17,12 @@ body
   background-color: #00688B;
   height: 150px;
   border-bottom: 10px solid #FFFACD;
-}
-
-.logo .fa{
-  font-size: 20px;
+  margin-bottom: 40px;
 }
 
 .logo {
   font-size: 60px;
-  font-family: Helvetica, sans-serif;
+  font-family: Verdana, sans-serif;
   margin-top: 35px;
   margin-right: 20px;
 }
@@ -71,6 +68,21 @@ form .submit-buttons {
   border-top: 2px solid #E0FFFF;
 }
 
+ .submit-buttons {
+  background: linear-gradient(to top, #436EEE, #1E90FF);
+  border-radius: 7px;
+  border-bottom: 3px solid #00688B;
+  border-top: 2px solid #E0FFFF;
+}
+
+.submit-buttons-edit {
+ background: linear-gradient(to top, #436EEE, #1E90FF);
+ border-radius: 7px;
+ border-bottom: 3px solid #00688B;
+ border-top: 2px solid #E0FFFF;
+ margin-left: 10px;
+}
+
 //---------------ALL USERS PAGE STYLING------------------
 
 .all-users {
@@ -114,6 +126,11 @@ form .submit-buttons {
   margin-top: 15px;
 }
 
+.new-home {
+  margin-left: 40px;
+  font-family: Verdana, sans-serif;
+}
+
 //---------------USER PROFILE PAGE STYLING------------------
 
 .profile-details {
@@ -139,8 +156,14 @@ form .submit-buttons {
   margin-left: 45px;
 }
 
+
 .prof-bio {
   padding-left: 25px;
+}
+
+.bio {
+  margin-left: 25px;
+  margin-top: 15px;
 }
 
 
@@ -152,9 +175,6 @@ form .submit-buttons {
   margin-left: 10px;
  }
 
-
-
-//client view page and assistance components
 
 .section.open {
   button {

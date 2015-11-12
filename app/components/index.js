@@ -76,7 +76,7 @@ var Index = React.createClass({
     return (
     <div className="prof">
     <div className="row">
-      <div className="medium-5 columns"><h3 className="welcome">Welcome {username}</h3></div>
+      <div className="large-10 columns"><h3 className="welcome">Welcome {username}</h3></div>
     </div>
 
       <div className="row">
@@ -97,7 +97,8 @@ var Index = React.createClass({
           <li><h4><strong>Hypoallergenic dog: </strong></h4><h5>{currentUser.hypoallergenic}</h5></li>
           <li><h4><strong>Daily exercise: </strong></h4><h5>{currentUser.exercise}</h5></li>
           <li><h4><strong>Training: </strong></h4><h5>{currentUser.training}</h5></li>
-          <button onClick={this.handleUploadPhoto}>Upload Photo</button>
+          <button className="submit-buttons" onClick={this.handleUploadPhoto}>Change Photo</button>
+          <button className="submit-buttons-edit">Edit</button>
           </div>
         </ul>
         </div>
