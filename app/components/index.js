@@ -102,7 +102,7 @@ var Index = React.createClass({
         </ul>
         </div>
           <div className="row">
-              <h2>Bio: </h2><h4>{currentUser.bio}</h4>
+              <h2 className="prof-bio">Bio: </h2><h4 className="prof-bio">{currentUser.bio}</h4>
           </div>
         </div>
 
