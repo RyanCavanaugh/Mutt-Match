@@ -32,7 +32,7 @@ var App = React.createClass({
         <nav className="top-bar" data-topbar role="navigation">
           <ul className="title-area">
             <li className="name">
-              <h1><IndexLink to="/" className="logo">Re-dopt.com</IndexLink></h1>
+              <h1><IndexLink to="/" className="logo">Re <i className="fa fa-paw"></i> dopt.com</IndexLink></h1>
             </li>
           </ul>
 

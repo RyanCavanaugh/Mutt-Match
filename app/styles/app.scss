@@ -19,6 +19,10 @@ body
   border-bottom: 10px solid #FFFACD;
 }
 
+.logo .fa{
+  font-size: 20px;
+}
+
 .logo {
   font-size: 60px;
   font-family: Helvetica, sans-serif;
@@ -61,23 +65,13 @@ form .login-input{
 }
 
 form .submit-buttons {
-  background: linear-gradient(to top, #668B8B, #AEEEEE);
+  background: linear-gradient(to top, #436EEE, #1E90FF);
   border-radius: 7px;
-  border-bottom: 3px solid #528B8B;
+  border-bottom: 3px solid #00688B;
   border-top: 2px solid #E0FFFF;
 }
 
-
-//---------------USER PROFILE PAGE STYLING------------------
-
-.profile-details {
-  font-size: 15px;
-  list-style: none;
-}
-
-.prof {
-  float: left;
-}
+//---------------ALL USERS PAGE STYLING------------------
 
 .all-users {
   color:red;
@@ -90,9 +84,47 @@ form .submit-buttons {
   margin: 20px;
 }
 
-.userImageBox:hover{
-  background: #FFF68F;
+.all-users li{
+  display: inline-block;
 }
+
+.user-image-two {
+  border-right: 3px solid black;
+  border-radius: 15px 0px 0px 15px;
+  max-width: 300px;
+  max-height: 300px;
+}
+
+.userImageBox {
+  border: 3px solid black;
+  border-radius: 15px 15px 15px 15px;
+  background-color: #E0EEEE;
+  margin-bottom: 15px;
+  width: 800px;
+  height: 303px;
+}
+
+.userImageBox:hover{
+  background: #FFFACD;
+}
+
+.user-data {
+  float: right;
+  padding-right: 285px;
+  margin-top: 15px;
+}
+
+//---------------USER PROFILE PAGE STYLING------------------
+
+.profile-details {
+  font-size: 15px;
+  list-style: none;
+}
+
+.prof {
+  float: left;
+}
+
 
 .user-image{
   border: 5px solid black;
@@ -101,35 +133,14 @@ form .submit-buttons {
   max-height: 400px;
 }
 
-.user-image-two {
-  border-bottom: 5px solid black;
-  border-radius: 15px 15px 0px 0px;
-  max-width: 200px;
-  max-height: 200px;
-}
 
 .user-profile-top-row {
   margin-top: 45px;
   margin-left: 45px;
 }
 
-.userImageBox {
-  border: 3px solid black;
-  border-radius: 15px 15px 15px 15px;
-  background-color: #E0EEEE;
-  width: 201px;
-  margin-bottom: 15px;
-  display: inline-block;
-}
 
-.spread {
-  padding-right: 20px;
-}
 
-ul > .test {
- list-style: none;
- display: inline-block;
-}
 
 //__________________________________________________________
 
@@ -139,51 +150,7 @@ ul > .test {
   margin-left: 10px;
  }
 
-.bulletinBoard
- {
-  text-align: center;
-}
 
-.bulletinLines
- {
-  background-color: #F4EDDB;
-  list-style: none;
-  margin-bottom: 15px;
-
- }
-
-.bulletinHR{
-  margin-bottom: 5px;
-  margin-top: 0;
-}
-
-.bulletinSpan
- {
-  font-size: 10px;
-}
-
-//
-//view-client-list display
-//
-.clients
- {
-  text-align: center;
-}
-.clientListView
- {
-  list-style: none;
- }
-
- .clientInput {
-   background-color: blue;
- }
-
- //New Client page and input box styling
- ///
-.newClient
- {
-  text-align: center;
-  }
 
 //client view page and assistance components
 
@@ -229,4 +196,12 @@ ul > .test {
   padding: 1em;
   color: #333;
   line-height: 1.3;
+}
+
+.span-col {
+  border: 2px solid red;
+}
+
+li {
+  list-style: none;
 }
