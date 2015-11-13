@@ -48,7 +48,7 @@ const Signup = React.createClass({
 
     return (
     <div className="row">
-      <div className="medium-10 columns">
+      <div className="large-10 columns">
       <form onSubmit={this.handleSubmit}>
         <fieldset>
         <legend>Human Sign Up</legend>
@@ -75,11 +75,11 @@ const Signup = React.createClass({
                       </select>
 
                         Are there other pets in the household?
-                        <select ref="otherpets" defaultValue="Other Pets: None">
-                          <option value="Other Pets: Cat">A Cat</option>
-                          <option value="Other Pets: Dog">A Dog</option>
-                          <option value="Other Pets: Cat-dog">A Cat and Dog</option>
-                          <option value="Other Pets: None">None</option>
+                        <select ref="otherpets" defaultValue="None">
+                          <option value="Cat">A Cat</option>
+                          <option value="Dog">A Dog</option>
+                          <option value="Cat-dog">A Cat and Dog</option>
+                          <option value="None">None</option>
                         </select>
 
                         Are there (or will there be) children in the household?

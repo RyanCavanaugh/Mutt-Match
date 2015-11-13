@@ -76,13 +76,13 @@ var Index = React.createClass({
     return (
     <div className="prof">
     <div className="row">
-      <div className="large-10 columns"><h3 className="welcome">Welcome {username}</h3></div>
+      <div className="large-12 columns"><h3 className="welcome">Welcome {username}</h3></div>
     </div>
 
       <div className="row">
 
         <ul className="profile-details">
-          <div className="medium-5 columns">
+          <div className="large-5 columns">
           <li>
             <form onSubmit={this.handleSubmit}>
               {users.userimage && <div><img className="user-image" src={users.userimage.url} alt="Profile picture" /></div>}
@@ -91,14 +91,15 @@ var Index = React.createClass({
           </div>
 
           <div className="large-7 columns">
-          <li><h4><strong>Dog Size: </strong></h4><h5>{currentUser.dogsize}</h5></li>
-          <li><h4><strong>Children: </strong></h4><h5>{currentUser.children}</h5></li>
-          <li><h4><strong>Other pets: </strong></h4><h5>{currentUser.otherpets}</h5></li>
-          <li><h4><strong>Hypoallergenic dog: </strong></h4><h5>{currentUser.hypoallergenic}</h5></li>
-          <li><h4><strong>Daily exercise: </strong></h4><h5>{currentUser.exercise}</h5></li>
-          <li><h4><strong>Training: </strong></h4><h5>{currentUser.training}</h5></li>
+          <div className="user-prof-desc">
+          <li><h4><strong>Dog Size: </strong>{currentUser.dogsize}</h4></li>
+          <li><h4><strong>Children: </strong>{currentUser.children}</h4></li>
+          <li><h4><strong>Other pets: </strong>{currentUser.otherpets}</h4></li>
+          <li><h4><strong>Hypoallergenic dog: </strong>{currentUser.hypoallergenic}</h4></li>
+          <li><h4><strong>Daily exercise: </strong>{currentUser.exercise}</h4></li>
+          <li><h4><strong>Training: </strong>{currentUser.training}</h4></li>
           <button className="submit-buttons" onClick={this.handleUploadPhoto}>Change Photo</button>
-          <button className="submit-buttons-edit">Edit</button>
+          </div>
           </div>
         </ul>
         </div>

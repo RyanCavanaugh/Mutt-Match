@@ -30,10 +30,10 @@ const ViewUserProfile = React.createClass({
 
         <div className="user-profile-top-row">
           <div className="row">
-            <div className="medium-5 columns">
+            <div className="large-5 columns">
               <img className="user-image" src={user.userimage.url} ></img>
             </div>
-            <div className="medium-7 columns">
+            <div className="large-7 columns">
 
           <h1>{user.username}</h1>
           <h3><strong>Size: </strong>{user.dogsize}</h3>

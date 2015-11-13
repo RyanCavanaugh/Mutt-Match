@@ -98,6 +98,7 @@ form .submit-buttons {
 
 .all-users li{
   display: inline-block;
+  margin-left: 80px;
 }
 
 .user-image-two {
@@ -113,7 +114,7 @@ form .submit-buttons {
   background-color: #E0EEEE;
   margin-bottom: 15px;
   width: 800px;
-  height: 303px;
+  height: 302px;
 }
 
 .userImageBox:hover{
@@ -127,7 +128,7 @@ form .submit-buttons {
 }
 
 .new-home {
-  margin-left: 40px;
+  margin-left: 80px;
   font-family: Verdana, sans-serif;
 }
 
@@ -142,6 +143,10 @@ form .submit-buttons {
   float: left;
 }
 
+.user-prof-desc {
+  margin-top: 10px;
+  margin-left: 15px;
+}
 
 .user-image{
   border: 5px solid black;
