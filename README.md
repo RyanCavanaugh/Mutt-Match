@@ -1,61 +1,19 @@
-# react-webpack-scaffolding
-
-## How to get started
-
-1. Start your own project folder with a git clone then git init
-
-    ```sh
-    cd ~/Code/
-    hub clone jacobthemyth/react-webpack-scaffolding NEWPROJECT
-    cd NEWPROJECT
-    rm -rf .git
-    git init
-    git add .
-    git commit -m "Initial commit"
-    ```
-
-2. Install prerequisites
-
-    ```sh
-    npm install
-    ```
-
-3. Start watching for changes and develop it!
-
-    ```sh
-    gulp
-    ```
-
-## Usage
-
-### Images
-
-Images should be placed in `public/assets/images`
-
-#### In JS / JSX
-
-```jsx
-import mountains from 'assets/images/mountains.jpeg';
-
-var Thing = React.createClass({
-  render() {
-    return (
-      <img src={mountains} alt="Mountains" />
-    );
-  }
-});
+#Mutt-Match
+###contains
 ```
-
-#### In SCSS
-
-URLs are relative to `app.scss`
-
-```scss
-body {
-  background-image: url('../../public/assets/images/mountains.jpeg');
-}
+React webpack Scaffolding
+Gulp      
+Bower
+HTML
+Foundation
+React
+Backbone
 ```
+In this project the gulp file was set up previous by my teach, Jake Smith, at TIY. He is also responsible for the login and auth on this page.
 
+This project was written predominantly in React and uses React Routers to change pages.
+
+This app was designed with the idea that pets sometimes need new homes when their owners move or leave. So it is a way for their current owner to find their pet a new "perfect" home instead of taking them to the pound. It currently can create profiles and show all users on the site. 
 ## License
 
 MIT.
