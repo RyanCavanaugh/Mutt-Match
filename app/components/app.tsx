@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { Link, IndexLink } from 'react-router';
 import BackboneMixin from '../mixins/backbone';
 import store from '../store';

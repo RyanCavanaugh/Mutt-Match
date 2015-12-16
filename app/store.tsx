@@ -1,5 +1,5 @@
-import _ from 'underscore';
-import Backbone from 'backbone';
+import * as _ from 'underscore';
+import * as Backbone from 'backbone';
 import Session from './models/session';
 import User from './models/user';
 import UserCollection from './models/user-collection';

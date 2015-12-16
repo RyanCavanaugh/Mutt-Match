@@ -1,21 +1,21 @@
-import Backbone from 'backbone';
-import _ from "underscore";
+import * as Backbone from 'backbone';
+import * as _ from "underscore";
 import store from '../store';
 import User from './user';
 
-const Comment = Backbone.Model.extend({
-  idAttribute: "objectId",
-  urlRoot: "https://api.parse.com/1/classes/Pictures",
+class Comment extends Backbone.Model {
+  idAttribute = "objectId";
+  urlRoot = "https://api.parse.com/1/classes/Pictures";
 
-  url: function(){
+  url(){
     return Backbone.Model.prototype.url.apply(this, arguments);
-  },
+  }
 
   defaults(){
     return {
       creator: {toJSON: function(){}},
     }
-  },
+  }
 
   toJSON(options){
     if(options){
@@ -31,7 +31,8 @@ const Comment = Backbone.Model.extend({
     {
       return _.clone(this.attributes)
     }
-  },
+  }
+
   save(){
     let currentUser = store.getSession().currentUser;
     if(currentUser){
@@ -40,6 +41,6 @@ const Comment = Backbone.Model.extend({
       return Backbone.Model.prototype.save.apply(this, arguments);
     }
   }
-})
+}
 
 export default Comment;

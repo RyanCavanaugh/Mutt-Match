@@ -1,8 +1,8 @@
-import React from 'react';
+import * as React from 'react';
 import store from '../store';
 import { History, Link } from 'react-router';
 import BackboneMixin from '../mixins/backbone';
-import Index from 'components/index';
+import Index from './index';
 
 const ViewUserProfile = React.createClass({
   mixins: [History, BackboneMixin],

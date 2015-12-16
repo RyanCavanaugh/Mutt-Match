@@ -1,9 +1,9 @@
-import React from 'react';
+import * as React from 'react';
 import store from '../store';
 import {History, Link} from 'react-router';
 import BackboneMixin from '../mixins/backbone';
-import _ from 'underscore';
-import Index from 'components/index';
+import * as _ from 'underscore';
+import Index from './index';
 
 const ViewUsers = React.createClass({
 

@@ -91,14 +91,14 @@ declare module Backbone {
         stopListening(object?: any, events?: string, callback?: Function): any;
     }
 
-    class ModelBase extends Events {
-        url: any;
+    interface ModelBase extends Events {
+        url?: any;
         parse(response: any, options?: any): any;
         toJSON(options?: any): any;
         sync(...arg: any[]): JQueryXHR;
     }
 
-    class Model extends ModelBase {
+    class Model implements ModelBase {
 
         /**
         * Do not use, prefer TypeScript's extend functionality.
@@ -161,6 +161,8 @@ declare module Backbone {
         unset(attribute: string, options?: Silenceable): Model;
         validate(attributes: any, options?: any): any;
 
+        url(): string;
+
         private _validate(attributes: any, options: any): boolean;
 
         // mixins from underscore
@@ -173,9 +175,25 @@ declare module Backbone {
         pick(...keys: string[]): any;
         omit(keys: string[]): any;
         omit(...keys: string[]): any;
+
+        parse(response: any, options?: any): any;
+        toJSON(options?: any): any;
+        sync(...arg: any[]): JQueryXHR;
+
+        on(eventName: string, callback?: Function, context?: any): any;
+        on(eventMap: EventsHash): any;
+        off(eventName?: string, callback?: Function, context?: any): any;
+        trigger(eventName: string, ...args: any[]): any;
+        bind(eventName: string, callback: Function, context?: any): any;
+        unbind(eventName?: string, callback?: Function, context?: any): any;
+
+        once(events: string, callback: Function, context?: any): any;
+        listenTo(object: any, events: string, callback: Function): any;
+        listenToOnce(object: any, events: string, callback: Function): any;
+        stopListening(object?: any, events?: string, callback?: Function): any;
     }
 
-    class Collection<TModel extends Model> extends ModelBase {
+    class Collection<TModel extends Model> implements ModelBase {
 
         /**
         * Do not use, prefer TypeScript's extend functionality.
@@ -270,7 +288,24 @@ declare module Backbone {
         tail(): TModel;
         tail(n: number): TModel[];
         toArray(): any[];
+        url(): string;
         without(...values: any[]): TModel[];
+
+        parse(response: any, options?: any): any;
+        toJSON(options?: any): any;
+        sync(...arg: any[]): JQueryXHR;
+
+        on(eventName: string, callback?: Function, context?: any): any;
+        on(eventMap: EventsHash): any;
+        off(eventName?: string, callback?: Function, context?: any): any;
+        trigger(eventName: string, ...args: any[]): any;
+        bind(eventName: string, callback: Function, context?: any): any;
+        unbind(eventName?: string, callback?: Function, context?: any): any;
+
+        once(events: string, callback: Function, context?: any): any;
+        listenTo(object: any, events: string, callback: Function): any;
+        listenToOnce(object: any, events: string, callback: Function): any;
+        stopListening(object?: any, events?: string, callback?: Function): any;
     }
 
     class Router extends Events {

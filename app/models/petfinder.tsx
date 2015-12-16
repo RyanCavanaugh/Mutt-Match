@@ -1,14 +1,14 @@
-import Backbone from 'backbone';
+import * as Backbone from 'backbone';
 
-var Petfinder = Backbone.Model.extend({
+class Petfinder extends Backbone.Model {
 
-  urlRoot: "https://api.parse.com/1/classes/Petfinder",
+	urlRoot = "https://api.parse.com/1/classes/Petfinder";
 
-  idAttribute: 'objectId',
+	idAttribute = 'objectId';
 
-  parse(response) {
-    return response;
-  }
-});
+	parse(response) {
+		return response;
+	}
+}
 
 export default Petfinder;

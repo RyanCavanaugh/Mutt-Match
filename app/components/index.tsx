@@ -1,10 +1,9 @@
-import React from 'react';
+import * as React from 'react';
+import update = require('react-addons-update');
 import { Link, IndexLink } from 'react-router';
 import store from '../store';
 import { History } from 'react-router';
 import BackboneMixin from '../mixins/backbone';
-import update from 'react-addons-update';
-
 
 var Index = React.createClass({
 

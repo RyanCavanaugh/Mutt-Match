@@ -1,5 +1,5 @@
-import Backbone from 'backbone';
-import _ from 'underscore';
+import * as Backbone from 'backbone';
+import * as _ from 'underscore';
 import store from '../store';
 
 const BackboneMixin = _.extend({}, Backbone.Events, {

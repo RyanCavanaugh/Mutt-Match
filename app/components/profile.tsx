@@ -1,7 +1,9 @@
-import React from 'react';
+import * as React from 'react';
 import BackboneMixin from '../mixins/backbone';
 import store from '../store';
-import update from 'react-addons-update';
+import update = require('react-addons-update');
+
+declare var filepicker: any;
 
 const Profile = React.createClass({
 

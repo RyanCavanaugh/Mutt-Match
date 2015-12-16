@@ -1,9 +1,9 @@
-import $ from 'jquery'
-import Backbone from 'backbone';
+import * as $ from 'jquery'
+import * as Backbone from 'backbone';
 import User from './user';
 import store from '../store';
 
-const Session = Backbone.Model.extend({
+class Session extends Backbone.Model {
   authenticate(options) {
       if (options.username && options.password) {
         return $.ajax({
@@ -28,11 +28,11 @@ const Session = Backbone.Model.extend({
         }, () => false);
       } else {
         console.error("Invalid arguments to authenticate");
-        var dfd = new $.Deferred();
+        var dfd = $.Deferred();
         dfd.reject("Invalid arguments to authenticate");
         return dfd.promise();
       }
-    },
+    }
 
     restore() {
       var token = localStorage.getItem('parse-session-token');
@@ -41,13 +41,13 @@ const Session = Backbone.Model.extend({
           sessionToken: token
         });
       }
-    },
+    }
 
     invalidate() {
       localStorage.removeItem('parse-session-token');
       this.trigger('invalidationSucceeded');
       window.location.reload();
-    },
+    }
 
     toJSON() {
       return {
@@ -55,5 +55,5 @@ const Session = Backbone.Model.extend({
         isAuthenticated: !!this.get('currentUser')
       };
     }
-});
+}
 export default Session;
